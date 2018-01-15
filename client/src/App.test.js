@@ -1,9 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import DailyWeather from './components/DailyWeather';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  const wrapper = shallow(<App />);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('renders a DailyWeather component with a default location', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find(DailyWeather)).toHaveLength(1);
+});
+
+it('renders a text box', () => {
+
 });
