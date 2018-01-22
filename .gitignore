@@ -1,0 +1,6 @@
+
+# Top-level private files
+/private
+
+# misc
+.DS_Store

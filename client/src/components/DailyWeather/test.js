@@ -5,3 +5,9 @@ it('should render without crashing', () => {
     const wrapper = shallow(<DailyWeather />);
     expect(wrapper).toMatchSnapshot();
 });
+
+
+it('should render with the supplied classname', () => {
+    const wrapper = shallow(<DailyWeather className='test-weather' />);
+    expect(wrapper).toMatchSnapshot();
+});
