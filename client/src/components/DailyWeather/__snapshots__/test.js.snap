@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render with the supplied classname 1`] = `
-<div
-  className="test-weather daily-weather"
->
-  <ol
-    className="daily-weather_days"
-  />
-</div>
-`;
-
 exports[`should render without crashing 1`] = `
 <div
   className=" daily-weather"

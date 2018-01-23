@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
+import HourlyForecastCell from './HourlyForecastCell';
+import DateCell from './DateCell';
+
 import './index.css';
 
 import generateTestWeather from '../../lib/generateTestWeather';
+
+
 
 
 class DailyWeather extends Component
@@ -29,11 +35,11 @@ class DailyWeather extends Component
             <div className={classNames.join(' ')}>
                 <ol className="daily-weather_days">
                     {forecast.map((day, idx) => 
-                        <li key={`day.date.toString()`}>
-                            <span className="daily-weather_day">{day.date.toString()}</span>
+                        <li key={`day.date`}>
+                            <DateCell date={day.date} />
                             <ol className="daily-weather_hours">
                                 {day.hours.map((hourly, idx) => 
-                                    <li key={`${day.date.toString()}_${idx}`}>{hourly.temp}</li>
+                                    <HourlyForecastCell key={`${day.date.toString()}_${idx}`} temperature={hourly.temp} time={hourly.time} />
                                 )}
                             </ol>
                         </li>

@@ -13,10 +13,11 @@
     flex-direction: column;
 }
 
-.daily-weather_days li {
+.daily-weather_days > li {
     display: flex;
     flex-direction: row;
     flex: 0 1 auto;
+    border-bottom: 1px solid #abcdef;
 }
 
 
@@ -24,7 +25,35 @@
     width: 10%;
     flex: 0 1 auto;
 
-    background-color: red;
+    background-color: #ddeeff;
+
+    height: 4em;
+    width: 4em;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.daily-weather_day .-date {
+    font-size: 0.625em;
+
+    flex: 0 1 auto;
+    text-align: center;
+    padding: 0.2em;
+}
+
+.daily-weather_day .-day {
+    flex: 0 1 auto;
+    height: 100%;
+    font-size: 1.4em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.daily-weather_day .-day span {
+    flex: 0 1 auto;
 }
 
 .daily-weather_hours {
@@ -35,6 +64,33 @@
 }
 
 
-.daily-weather_hours li {
+.hourly-forecast {
+    flex: 0 0 auto;
+    width: 4em;
+    height: 4em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.hourly-forecast .-temperature {
+    flex: 0 1 auto;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.hourly-forecast .-temperature span {
     flex: 0 1 auto;
 }
+
+.hourly-forecast .-hour {
+    flex: 0 1 auto;
+    text-align: center;
+    font-size: 0.625em;
+    padding: 0.2em;
+}
+
+

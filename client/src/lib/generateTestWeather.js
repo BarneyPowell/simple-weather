@@ -8,11 +8,13 @@ export default () => {
     const today = new Date();
  
     const forecast = days.map((day, idx) => {
+            const date = new Date(today.getFullYear(), today.getMonth(), today.getDate() + day);
             return {
-                date: new Date(today.getFullYear(), today.getMonth(), today.getDate() + day),
+                date: date.toISOString(),
                 hours: hours.map((hour) => {
+                    const time = new Date(date.getFullYear(), date.getMonth(), date.getDate(), hour, 0, 0, 0).toISOString();
                     return {
-                        hour,
+                        time,
                         temp: ((Math.random() * 8) + 8) - (Math.random() * (hour - (hours.length / 2)))
                     }
                 })
