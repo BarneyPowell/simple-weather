@@ -1,5 +1,28 @@
 
+.daily-weather {
+    position: relative;
+}
 
+.daily-weather.-empty {
+    text-align: center;
+}
+
+.daily-weather .-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items:  center;
+    justify-content: center;
+}
+
+.daily-weather .-loading > span {
+    flex: 0 1 auto;
+    
+}
 
 .daily-weather ol {
     list-style: none;
@@ -18,6 +41,10 @@
     flex-direction: row;
     flex: 0 1 auto;
     border-bottom: 1px solid #abcdef;
+}
+
+.daily-weather_days > li:first-child {
+    border-top: 1px solid #abcdef;
 }
 
 
@@ -61,12 +88,14 @@
     width: 100%;
     flex: 0 1 auto;
     overflow: auto;
+    justify-content: space-between;
 }
+
 
 
 .hourly-forecast {
     flex: 0 0 auto;
-    width: 4em;
+    min-width: 4em;
     height: 4em;
     position: relative;
     display: flex;
@@ -86,6 +115,20 @@
     flex: 0 1 auto;
 }
 
+.hourly-forecast .-weather {
+    flex: 0 1 auto;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6em;
+}
+
+.hourly-forecast .-weather span {
+    flex: 0 1 auto;
+}
+
+
 .hourly-forecast .-hour {
     flex: 0 1 auto;
     text-align: center;
@@ -93,4 +136,19 @@
     padding: 0.2em;
 }
 
+.daily-weather_header {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
 
+.daily-weather_header .-intro {
+    font-size: 0.7em;
+    flex: 0 1 auto;
+}
+
+.daily-weather_header .-location {
+    font-size: 1.5em;
+    font-weight: bold;
+    flex: 0 1 auto;
+}

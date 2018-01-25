@@ -3,5 +3,13 @@
 exports[`should render without crashing 1`] = `
 <div
   className="location-input"
-/>
+>
+  <label />
+  <input
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    placeholder="City name"
+    type="text"
+  />
+</div>
 `;

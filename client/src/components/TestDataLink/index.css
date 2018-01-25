@@ -1,0 +1,13 @@
+.test-data-link {
+    text-align: center;
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+
+.test-data-link button {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    text-decoration: underline;
+    color: #789abc;
+}

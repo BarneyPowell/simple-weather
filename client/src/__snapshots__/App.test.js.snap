@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<App>
+  <WeatherApiProvider>
+    <div>
+      <div
+        className="App"
+      >
+        <Wrapper
+          className="main-weather"
+        >
+          <DailyWeatherContainer
+            className="main-weather"
+            fetchForecast={[Function]}
+            getForecast={[Function]}
+            setUseTestData={[Function]}
+          >
+            <div>
+              <LocationInput
+                label="Enter a city, and press enter"
+                onAction={[Function]}
+              >
+                <div
+                  className="location-input"
+                >
+                  <label>
+                    Enter a city, and press enter
+                  </label>
+                  <input
+                    onChange={[Function]}
+                    onKeyPress={[Function]}
+                    placeholder="City name"
+                    type="text"
+                  />
+                </div>
+              </LocationInput>
+              <Component
+                onClick={[Function]}
+              >
+                <div
+                  className="test-data-link"
+                >
+                  or 
+                  <button
+                    onClick={[Function]}
+                  >
+                    use test data from csv
+                  </button>
+                </div>
+              </Component>
+              <DailyWeather
+                className="main-weather"
+                forecasts={Array []}
+                isFetching={false}
+                shouldUseTestData={false}
+              >
+                <div
+                  className="main-weather daily-weather -empty"
+                >
+                  <span>
+                    No forecast found
+                  </span>
+                </div>
+              </DailyWeather>
+            </div>
+          </DailyWeatherContainer>
+        </Wrapper>
+      </div>
+    </div>
+  </WeatherApiProvider>
+</App>
+`;

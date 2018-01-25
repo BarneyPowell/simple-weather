@@ -1,0 +1,20 @@
+.location-input {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.location-input label {
+    flex: 0 1 auto;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+}
+
+.location-input input {
+    flex: 0 1 auto;
+    border: none;
+    border-bottom: 2px solid #abcdef;
+    background-color: #f9f9f9;
+    padding: 0.5em;
+    font-size: 1em;
+}

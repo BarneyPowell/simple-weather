@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render without crashing 1`] = `
-<div
-  className=" daily-weather"
->
-  <ol
-    className="daily-weather_days"
-  />
-</div>
+<DailyWeather>
+  <div
+    className=" daily-weather -empty"
+  >
+    <span>
+      No forecast found
+    </span>
+  </div>
+</DailyWeather>
 `;

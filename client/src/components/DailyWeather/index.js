@@ -3,21 +3,32 @@ import PropTypes from 'prop-types';
 
 import HourlyForecastCell from './HourlyForecastCell';
 import DateCell from './DateCell';
-
+import Header from './Header';
+import DailyForecastRow from './DailyForecastRow';
 import './index.css';
-
-import generateTestWeather from '../../lib/generateTestWeather';
-
-
 
 
 class DailyWeather extends Component
 {
 
-    constructor(props) {
-        super(props);
 
+    renderEmpty(classNames) {
+        classNames.push('-empty');
+        return (
+            <div className={classNames.join(' ')}>
+                <span>No forecast found</span>
+                {this.renderLoadingMessage()}
+            </div>
+        );
+    }
 
+    renderLoadingMessage() {
+        if(!this.props.isFetching) return null;
+        return (
+            <div className="-loading">
+                <span>Fetching forecast...</span>
+            </div>
+        );
     }
 
     render() {
@@ -28,23 +39,21 @@ class DailyWeather extends Component
 
         classNames.push('daily-weather');
 
-        const forecast = this.props.forecast || [];
-        
+        const forecasts = this.props.forecasts || [];
 
+        if(this.props.isFetching) classNames.push('-isFetching');
+
+        if(forecasts.length === 0) {
+            return this.renderEmpty(classNames);
+        }
+        
         return (
             <div className={classNames.join(' ')}>
+                <Header location={this.props.location} />
                 <ol className="daily-weather_days">
-                    {forecast.map((day, idx) => 
-                        <li key={`day.date`}>
-                            <DateCell date={day.date} />
-                            <ol className="daily-weather_hours">
-                                {day.hours.map((hourly, idx) => 
-                                    <HourlyForecastCell key={`${day.date.toString()}_${idx}`} temperature={hourly.temp} time={hourly.time} />
-                                )}
-                            </ol>
-                        </li>
-                    )}
+                    {forecasts.map((day, idx) => <DailyForecastRow key={`${day.day}`} day={day} />)}
                 </ol>
+                {this.renderLoadingMessage()}
             </div>
         );
     }
@@ -52,7 +61,8 @@ class DailyWeather extends Component
 
 DailyWeather.propTypes = {
     location: PropTypes.object,
-    forecast: PropTypes.array
+    forecasts: PropTypes.array,
+    isFetching: PropTypes.bool
 }
 
 export default DailyWeather;
